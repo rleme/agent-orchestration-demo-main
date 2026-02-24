@@ -1,38 +1,36 @@
-# Agent Orchestration Demo
+# Demo de Orquestração de Agentes
 
-This repository demonstrates **agent handoffs** in GitHub Copilot, showcasing how multiple specialized agents collaborate to improve code quality through orchestrated workflows.
+Este repositório demonstra **handoffs de agentes** no GitHub Copilot, mostrando como vários agentes especializados colaboram para melhorar a qualidade do código por meio de fluxos de trabalho orquestrados.
 
-## What are Agent Handoffs?
+## O que são Handoffs de Agentes?
 
-Agent handoffs allow you to chain multiple specialized AI agents together, where each agent has specific expertise and responsibilities. When you interact with one agent, it can automatically hand off tasks to other agents based on their capabilities, creating a collaborative workflow.
+Handoffs de agentes permitem encadear vários agentes de IA especializados, em que cada agente possui conhecimentos e responsabilidades específicos. Quando você interage com um agente, ele pode transferir automaticamente tarefas para outros agentes com base em suas capacidades, criando um fluxo de trabalho colaborativo.
 
-## Agents in This Demo
+## Agentes desta Demonstração
 
-This repository includes four specialized agents:
+Este repositório inclui quatro agentes especializados:
 
-- **🧪 Tester**: Senior QA Engineer for logic and edge-case validation
-- **📝 Scribe**: Documentation specialist for creating comprehensive docs
-- **🚀 PR Manager**: Lead Architect for PR readiness and code review
-- **🛡️ Gatekeeper**: Enterprise Compliance and Quality Gate expert
+- **🧪 Tester**: Engenheiro(a) de QA sênior para validação de lógica e casos de borda
+- **📝 Scribe**: Especialista em documentação para criar documentação abrangente
+- **🚀 PR Manager**: Arquiteto(a) líder para preparar Pull Requests e revisar código
+- **🛡️ Gatekeeper**: Especialista em conformidade corporativa e quality gates
 
-## Try It Out
+## Experimente
 
-### Prerequisites
-- GitHub Copilot enabled in VS Code
-- Copilot Chat extension installed
+### Pré-requisitos
+- GitHub Copilot habilitado no VS Code
+- Extensão Copilot Chat instalada
 
-### How to Experience Agent Handoffs
+### Como experimentar os Handoffs de Agentes
 
-1. **Open the repository** in VS Code
-2. **Open Copilot Chat** 
-  
-and select pr-manager as the active agent.
-Give prompt as 'prepare this code for a pull request'
+1. **Abra o repositório** no VS Code
+2. **Abra o Copilot Chat**
 
-The PR manager will orchestrate all agents to ensure the code is test-covered, documented, and compliant.
+e selecione `pr-manager` como agente ativo.
+Use o prompt: `prepare this code for a pull request`
 
+O PR Manager irá orquestrar todos os agentes para garantir que o código tenha testes, documentação e conformidade.
 
-
-The `orderProcessor.js` file is intentionally basic - it's missing error handling, validation, documentation, and tests. This gives the agents plenty to work with!
+O arquivo `orderProcessor.js` é intencionalmente básico — ele não possui tratamento de erros, validação, documentação nem testes. Isso dá aos agentes bastante espaço para atuar!
 
 
