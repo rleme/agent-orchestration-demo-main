@@ -1,38 +1,52 @@
-# Agent Orchestration Demo
+# Order Processor
 
-This repository demonstrates **agent handoffs** in GitHub Copilot, showcasing how multiple specialized agents collaborate to improve code quality through orchestrated workflows.
+A minimal Node.js module that exports `processOrder(item, quantity, price)` to calculate order totals with input validation.
 
-## What are Agent Handoffs?
+## Installation
 
-Agent handoffs allow you to chain multiple specialized AI agents together, where each agent has specific expertise and responsibilities. When you interact with one agent, it can automatically hand off tasks to other agents based on their capabilities, creating a collaborative workflow.
+No external dependencies are required.
 
-## Agents in This Demo
+## Quick Start
 
-This repository includes four specialized agents:
+```js
+const { processOrder } = require("./orderProcessor");
 
-- **🧪 Tester**: Senior QA Engineer for logic and edge-case validation
-- **📝 Scribe**: Documentation specialist for creating comprehensive docs
-- **🚀 PR Manager**: Lead Architect for PR readiness and code review
-- **🛡️ Gatekeeper**: Enterprise Compliance and Quality Gate expert
+const order = processOrder("Notebook", 2, 14.5);
+console.log(order);
+// { item: 'Notebook', total: 29, status: 'processed' }
+```
 
-## Try It Out
+## API
 
-### Prerequisites
-- GitHub Copilot enabled in VS Code
-- Copilot Chat extension installed
+### `processOrder(item, quantity, price)`
 
-### How to Experience Agent Handoffs
+Processes a single order and returns a normalized result object.
 
-1. **Open the repository** in VS Code
-2. **Open Copilot Chat** 
-  
-and select pr-manager as the active agent.
-Give prompt as 'prepare this code for a pull request'
+#### Parameters
+- `item` (`string`): Product name; must be a non-empty string.
+- `quantity` (`number`): Must be a positive integer.
+- `price` (`number`): Must be a non-negative finite number.
 
-The PR manager will orchestrate all agents to ensure the code is test-covered, documented, and compliant.
+#### Returns
+An object with:
+- `item` (`string`)
+- `total` (`number`) — rounded to 2 decimal places
+- `status` (`'processed'`)
 
+#### Validation and Errors
+The function throws:
+- `TypeError` for invalid `item` (empty or non-string)
+- `TypeError` for non-integer `quantity`
+- `RangeError` for `quantity <= 0`
+- `TypeError` for non-finite or non-number `price`
+- `RangeError` for `price < 0`
 
+## Testing
 
-The `orderProcessor.js` file is intentionally basic - it's missing error handling, validation, documentation, and tests. This gives the agents plenty to work with!
+Run tests with:
 
+```bash
+npm test
+```
 
+The test suite validates happy-path behavior, input validation, and floating-point rounding.

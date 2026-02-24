@@ -1,0 +1,13 @@
+{
+  "name": "agent-orchestration-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal order processing module used for agent orchestration demos.",
+  "main": "orderProcessor.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
